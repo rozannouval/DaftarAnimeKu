@@ -1,10 +1,10 @@
-import { Gabarito } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Utilities/Button";
 import Footer from "@/components/Footer";
 
-const gabarito = Gabarito({ subsets: ["latin"] });
+const gabarito = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "DaftarAnimeKu - Anime",
