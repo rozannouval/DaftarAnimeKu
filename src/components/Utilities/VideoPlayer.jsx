@@ -1,5 +1,4 @@
 "use client";
-import { XCircle } from "@phosphor-icons/react/dist/ssr";
 import YouTube from "react-youtube";
 
 export default function VideoPlayer({ youtubeId }) {

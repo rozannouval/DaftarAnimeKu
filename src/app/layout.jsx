@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Button from "@/components/Utilities/Button";
 import Footer from "@/components/Footer";
 
-const gabarito = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "DaftarAnimeKu - Anime",
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${gabarito.className} text-slate-700 dark:text-slate-100`}
+        className={`${inter.className} text-slate-700 dark:text-slate-100`}
         suppressHydrationWarning={true}
       >
         <Navbar />

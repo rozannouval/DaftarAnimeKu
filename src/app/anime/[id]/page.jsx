@@ -1,6 +1,6 @@
 import { getApiData } from "@/lib/api-libs";
 import Image from "next/image";
-import FormatNumber from "@/lib/formatNumber";
+import FormatNumber from "@/lib/FormatNumber";
 
 import {
   Accordion,

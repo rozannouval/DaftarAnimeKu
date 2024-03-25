@@ -1,7 +1,7 @@
 import { Calendar, Users } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
-import FormatNumber from "@/lib/formatNumber";
+import FormatNumber from "@/lib/FormatNumber";
 
 export default function SeasonUpComing({ api }) {
   const sortedAnimeData = api.data?.slice(0, 25); // Mengambil 25 anime pertama
