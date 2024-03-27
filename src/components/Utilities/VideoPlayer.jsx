@@ -12,6 +12,7 @@ export default function VideoPlayer({ youtubeId }) {
         videoId={youtubeId}
         onReady={(event) => event.target.pauseVideo()}
         className="w-full"
+        onError={() => alert("Maaf, Video Bermasalah")}
       />
     </div>
   );

@@ -6,3 +6,8 @@ export const getApiData = async(resource, query) => {
       const apiData = await response.json();
     return apiData
 }
+
+export const getNestedApiData = async(resource, objectProperty) => {
+  const response = await getApiData(resource)
+  return response.data.flatMap(item => item.entry)
+}
