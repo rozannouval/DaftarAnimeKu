@@ -4,15 +4,15 @@ import { getApiData } from "@/lib/api-libs";
 // import Banner from "@/components/AnimeList/Banner";
 
 export default async function Page() {
-  const topManga = await getApiData("top/manga", `limit=15&sfw=true`);
+  const topManga = await getApiData("top/manga", `limit=10&type=lightnovel`);
 
   return (
     <div className="bg-slate-200 dark:bg-slate-800">
-      <section>
+      <section className="pb-4">
         {/* <Banner api={topManga} /> */}
         <Header
-          title="PERINGKAT TERATAS"
-          linkHref="/manga/topManga"
+          title="LIGHT NOVEL PERINGKAT TERATAS"
+          linkHref="/manga/topLightNovel"
           linkTitle="Lihat Semua"
         />
         <AnimeList api={topManga} />

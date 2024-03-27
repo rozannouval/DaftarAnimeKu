@@ -11,7 +11,7 @@ export default function Page() {
   const [topManga, setTopManga] = useState([]);
 
   const fetchData = async () => {
-    const data = await getApiData("top/manga", `page=${page}&sfw=true`);
+    const data = await getApiData("top/manga", `page=${page}&filter=favorite&type=lightnovel`);
     setTopManga(data);
   };
 
@@ -21,7 +21,7 @@ export default function Page() {
 
   return (
     <div className="dark:bg-slate-800 bg-slate-200 min-h-screen">
-      <HeaderMenu title={`MANGA TERATAS`} count={`halaman ke ${page}`} />
+      <HeaderMenu title={`LIGHT NOVEL TERATAS`} count={`halaman ke ${page}`} />
       <AnimeList api={topManga} />
       <Pagination
         page={page}

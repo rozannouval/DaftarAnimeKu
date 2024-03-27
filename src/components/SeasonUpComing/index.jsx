@@ -29,7 +29,7 @@ export default function SeasonUpComing({ api }) {
               </h2>
 
               <div className="absolute z-20 bottom-0 left-0 w-full bg-gradient-to-t from-black ">
-                <h2 className="text-white font-bold pt-6 pb-1 px-2 text-md md:text-lg font-sans">
+                <h2 className="text-white font-bold pt-8 mt-10 pb-1 px-2 text-md md:text-lg font-sans">
                   {anime.title}
                 </h2>
               </div>

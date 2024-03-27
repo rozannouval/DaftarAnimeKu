@@ -54,21 +54,21 @@ export default async function Page() {
       <section className="py-2">
       <Header
           title="MUSIM YANG AKAN DATANG..."
-          linkHref="/upComing"
+          linkHref="/anime/upComing"
           linkTitle="Lihat Semua"
         />
         <SeasonUpComing api={upComing} />
       </section>
       <section className="py-2">
         <Header
-          title="REKOMENDASI"
+          title="REKOMENDASI ANIME UNTUK ANDA..."
         />
         <Rekomendasi api={rekomendasi} />
       </section>
       <section className="py-2">
         <Header
           title="ANIME TERBARU"
-          linkHref="/schedules"
+          linkHref="/anime/schedules"
           linkTitle="Lihat Semua"
         />
         <Schedules api={schedules} />
@@ -76,7 +76,7 @@ export default async function Page() {
       <section className="py-2">
         <Header
           title="PERINGKAT TERATAS"
-          linkHref="/topAnime"
+          linkHref="/anime/topAnime"
           linkTitle="Lihat Semua"
         />
         <AnimeList api={topAnime} />
@@ -84,7 +84,7 @@ export default async function Page() {
       <section className="py-2">
         <Header
           title="KARAKTER TERPOPULER"
-          linkHref="/topCharacters"
+          linkHref="/characters/topCharacters"
           linkTitle="Lihat Semua"
         />
         <CharList api={topChar} />
