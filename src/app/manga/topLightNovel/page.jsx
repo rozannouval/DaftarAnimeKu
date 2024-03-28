@@ -1,6 +1,6 @@
 "use client";
 
-import AnimeList from "@/components/AnimeList";
+import MangaList from "@/components/MangaList";
 import HeaderMenu from "@/components/Utilities/HeaderMenu";
 import Pagination from "@/components/Utilities/Pagination";
 import { getApiData } from "@/lib/api-libs";
@@ -22,7 +22,7 @@ export default function Page() {
   return (
     <div className="dark:bg-slate-800 bg-slate-200 min-h-screen">
       <HeaderMenu title={`LIGHT NOVEL TERATAS`} count={`halaman ke ${page}`} />
-      <AnimeList api={topManga} />
+      <MangaList api={topManga} />
       <Pagination
         page={page}
         lastPage={topManga.pagination?.last_visible_page}
