@@ -43,7 +43,7 @@ export default function Navbar() {
                   </MenubarItem>
                 </Link>
                 <Link
-                  href="/topAnime"
+                  href="/anime/topAnime"
                   className="hover:bg-slate-200 hover:text-black "
                 >
                   <MenubarItem className="cursor-pointer">
@@ -51,7 +51,7 @@ export default function Navbar() {
                   </MenubarItem>
                 </Link>
                 <Link
-                  href="/topCharacter"
+                  href="/characters/topCharacters"
                   className="hover:bg-slate-200 hover:text-black "
                 >
                   <MenubarItem className="cursor-pointer">

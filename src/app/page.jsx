@@ -11,7 +11,7 @@ import Rekomendasi from "@/components/Rekomendasi";
 
 export default async function Page() {
   // Mendapatkan hari ini dalam format yang sesuai dengan API Anda
-  const daysOfWeek = [
+  /* const daysOfWeek = [
     "sunday",
     "monday",
     "tuesday",
@@ -27,19 +27,16 @@ export default async function Page() {
   const schedules = await getApiData(
     "schedules",
     `filter=${hariIni}&kids=false&limit=5&sfw=true`
-  );
+  ); */
 
   let rekomendasi = await getNestedApiData("recommendations/anime", "entry")
   rekomendasi = {data: rekomendasi.slice(0, 5)}
 
   // Mendapatkan data anime teratas
-  const topAnime = await getApiData("top/anime", "limit=5&sfw=true");
+  const topAnime = await getApiData("top/anime", "limit=3&sfw=true");
 
   // Mendapatkan data karakter teratas
-  const topChar = await getApiData("top/characters", "limit=5&sfw=true");
-
-  // Mendapatkan data karakter teratas
-  const upComing = await getApiData("seasons/upcoming", "limit=10&sfw=true");
+  const upComing = await getApiData("seasons/upcoming", "limit=5&sfw=true");
 
   return (
     <div className="bg-slate-100 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">
@@ -66,14 +63,14 @@ export default async function Page() {
         />
         <Rekomendasi api={rekomendasi} />
       </section>
-      <section className="py-2">
+      {/* <section className="py-2">
         <Header
           title="ANIME TERBARU"
           linkHref="/anime/schedules"
           linkTitle="Lihat Semua"
         />
         <Schedules api={schedules} />
-      </section>
+      </section> */}
       <section className="py-2">
         <Header
           title="PERINGKAT TERATAS"
@@ -81,14 +78,6 @@ export default async function Page() {
           linkTitle="Lihat Semua"
         />
         <AnimeList api={topAnime} />
-      </section>
-      <section className="py-2">
-        <Header
-          title="KARAKTER TERPOPULER"
-          linkHref="/characters/topCharacters"
-          linkTitle="Lihat Semua"
-        />
-        <CharList api={topChar} />
       </section>
     </div>
   );
