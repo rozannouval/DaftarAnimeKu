@@ -18,7 +18,7 @@ export default function SeasonUpComing({ api }) {
             <div className="relative z-40">
               <Image
                 src={anime.images.webp.image_url}
-                alt={anime.title}
+                alt={anime.name}
                 width={1000}
                 height={1000}
                 className="w-full h-64 sm:h-64 md:h-72 xl:h-80 object-cover"

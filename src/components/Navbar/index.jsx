@@ -18,7 +18,13 @@ export default function Navbar() {
     <header className="">
       <div className="flex md:flex-row justify-center md:items-center p-4 gap-2 text-slate-600 dark:bg-slate-200 sm:px-0 md:px-8 lg:px-16 xl:px-32 2xl:px-64 px-1 bg-slate-200 font-thin text-3xl">
         <Link href="/" className="flex items-center gap-2 dark:text-black">
-          <Image src={Logo} width={1000} height={1000} className="w-8 h-8" />
+          <Image
+            src={Logo}
+            alt={Logo}
+            width={1000}
+            height={1000}
+            className="w-8 h-8"
+          />
           <h1 className="font-bold">DaftarAnimeKu</h1>
         </Link>
       </div>

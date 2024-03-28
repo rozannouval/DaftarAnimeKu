@@ -46,6 +46,7 @@ export default async function Page() {
       <div className="flex items-center mx-0 font-bold tracking-wider px-2">
         <Image
           src={Banner}
+          alt={Banner}
           width={1000}
           height={1000}
           className="w-full h-64 border-8 object-cover border-gray-700"
