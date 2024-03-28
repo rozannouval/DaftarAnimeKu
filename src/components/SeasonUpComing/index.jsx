@@ -23,7 +23,7 @@ export default function SeasonUpComing({ api }) {
                 height={1000}
                 className="w-full h-64 sm:h-64 md:h-72 xl:h-80 object-cover"
               />
-              <h2 className="flex items-center gap-1 absolute z-30 top-0 left-0 text-white font-semibold px-2 py-1 text-md md:text-lg bg-red-600/80 border-b border-r border-black">
+              <h2 className="flex items-center gap-1 absolute z-30 top-0 left-0 text-white font-semibold px-2 py-1 text-md md:text-lg bg-blue-800/80 border-b border-r border-blue-800">
                 <Calendar /> {anime.aired.prop.from.day} -
                 {anime.aired.prop.from.month} -{anime.aired.prop.from.year}
               </h2>
@@ -36,7 +36,7 @@ export default function SeasonUpComing({ api }) {
 
               <div className="absolute z-30 inset-0 bg-white opacity-0 hover:opacity-20 transition-opacity"></div>
             </div>
-            <h2 className="flex items-center gap-1 bottom-0 left-0 py-1 text-white bg-red-800 font-medium px-2 text-sm md:text-md">
+            <h2 className="flex items-center gap-1 bottom-0 left-0 py-1 text-white bg-blue-800 font-bold px-2 text-sm md:text-md">
               <Users />
               <FormatNumber number={anime.members} />
             </h2>

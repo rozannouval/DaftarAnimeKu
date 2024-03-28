@@ -27,7 +27,7 @@ export default async function Page() {
     `filter=${hariIni}&kids=false&limit=5&sfw=true`
   ); */
 
-  let rekomendasi = await getNestedApiData("recommendations/anime", "entry");
+  let rekomendasi = await getNestedApiData("recommendations/anime", "entry")
   rekomendasi = { data: rekomendasi.slice(0, 5) };
 
   const topAnime = await getApiData("top/anime", "limit=5&sfw=true");
@@ -35,7 +35,7 @@ export default async function Page() {
   const upComing = await getApiData("seasons/upcoming", "limit=5");
 
   return (
-    <div className="bg-slate-100 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">
+    <div className="bg-blue-100 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">
       <div className="flex items-center mx-0 font-bold tracking-wider px-2">
         <Image
           src={Banner}
@@ -45,6 +45,10 @@ export default async function Page() {
           className="w-full h-64 border-8 object-cover border-gray-700"
         />
       </div>
+
+      <section className="py-2 px-4 m-2 font-bold text-xl font-serif text-blue-800 bg-blue-300">
+        <h1>Selamat Datang di DaftarAnimeKu!</h1>
+      </section>
 
       <section className="py-2">
         <Header

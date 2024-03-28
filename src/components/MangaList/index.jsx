@@ -19,12 +19,12 @@ export default function MangaList({ api }) {
             <div className="relative border-2 border-blue-900 rounded">
 
               <div className="grid md:grid-cols-2 sm:grid-cols-1 font-sans">
-                <h2 className="flex items-center justify-center gap-1 px-2 bg-cyan-600 text-white font-bold py-1 text-md md:text-lg border-b-2 border-r-2 border-blue-900">
+                <h2 className="flex items-center justify-center gap-1 px-2 bg-blue-600 text-white font-bold py-1 text-md md:text-lg border-b-2 border-blue-900">
                   <Crown className="h-6 w-6" /> {anime.rank}
                 </h2>
 
                 {/* Anime Score */}
-                <h2 className="flex items-center gap-1 text-white bg-red-600 font-bold px-4 py-1 text-md md:text-lg border-b-2 border-l-2 border-blue-900">
+                <h2 className="flex items-center gap-1 text-blue-700 bg-blue-100 font-bold px-4 py-1 text-md md:text-lg border-b-2 border-l-2 border-blue-900">
                   <Star className="h-5 w-5"/>
                   {anime.score}
                 </h2>

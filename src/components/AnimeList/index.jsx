@@ -9,7 +9,7 @@ export default function AnimeList({ api }) {
 
   return (
     <div className="px-4">
-      <table className="table-fixed border-collapse border border-slate-400">
+      <table className="table-fixed bg-blue-50 border-collapse border border-slate-400">
         <thead className="bg-blue-600 text-white">
           <tr>
             <th className="border border-slate-400 px-4">Peringkat</th>
@@ -49,28 +49,30 @@ export default function AnimeList({ api }) {
                         passHref
                         className="cursor-pointer hover:text-indigo-800 transition-all"
                       >
-                        <h2 className="font-bold font-sans pb-1 text-md md:text-lg">
+                        <h2 className="font-bold text-indigo-800 font-sans pb-1 text-md md:text-lg">
                           {anime.title}
                         </h2>
                       </Link>
 
-                      <p className="py-1 text-sm font-light">
-                        Tanggal ({anime.aired.prop.from.day}/
-                        {anime.aired.prop.from.month}/
-                        {anime.aired.prop.from.year}) - (
-                        {anime.aired.prop.to.day}/{anime.aired.prop.to.month}/
-                        {anime.aired.prop.to.year})
-                      </p>
-                      <p className="py-1 text-sm font-light">
-                        {anime.type} ({anime.episodes} Episode)
-                      </p>
-                      <p className="py-1 text-sm font-light">
-                        Durasi ({anime.duration})
-                      </p>
-                      <p className="py-1 text-sm font-light">
-                        Jumlah Favorite (
-                        <FormatNumber number={anime.favorites} />)
-                      </p>
+                      <div className="pt-2 font-sans text-sm font-normal text-slate-500/90">
+                        <p>
+                          Tanggal ({anime.aired.prop.from.day}/
+                          {anime.aired.prop.from.month}/
+                          {anime.aired.prop.from.year}) - (
+                          {anime.aired.prop.to.day}/{anime.aired.prop.to.month}/
+                          {anime.aired.prop.to.year})
+                        </p>
+                        <p className="my-2">
+                          {anime.type} ({anime.episodes} Episode)
+                        </p>
+                        <p>
+                          Durasi ({anime.duration})
+                        </p>
+                        <p className="my-2">
+                          Jumlah Favorite (
+                          <FormatNumber number={anime.favorites} />)
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </td>

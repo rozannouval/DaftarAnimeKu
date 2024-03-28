@@ -21,7 +21,7 @@ export default function Rekomendasi({ api }) {
                 height={1000}
                 className="w-full h-64 sm:h-64 md:h-72 xl:h-80 object-cover"
               />
-              <h2 className="flex items-center gap-1 absolute z-30 top-0 left-0 text-white font-semibold px-2 py-1 text-md md:text-lg bg-red-600/80 border-b border-r border-black">
+              <h2 className="flex items-center gap-1 absolute z-30 top-0 left-0 text-white font-semibold px-2 py-1 text-md md:text-lg bg-blue-600/80 border-b border-r border-black">
                 <List /> Rekomendasi
               </h2>
 
