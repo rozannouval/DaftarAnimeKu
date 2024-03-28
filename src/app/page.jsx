@@ -8,31 +8,12 @@ import Rekomendasi from "@/components/Rekomendasi";
 import MangaList from "@/components/MangaList";
 
 export default async function Page() {
-  // Mendapatkan hari ini dalam format yang sesuai dengan API Anda
-  /* const daysOfWeek = [
-    "sunday",
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday",
-  ];
-  const today = new Date().getDay();
-  const hariIni = daysOfWeek[today];
-
-  // Mendapatkan data jadwal untuk hari ini
-  const schedules = await getApiData(
-    "schedules",
-    `filter=${hariIni}&kids=false&limit=5&sfw=true`
-  ); */
-
-  let rekomendasi = await getNestedApiData("recommendations/anime", "entry")
-  rekomendasi = { data: rekomendasi.slice(0, 5) };
-
   const topAnime = await getApiData("top/anime", "limit=5&sfw=true");
 
-  const upComing = await getApiData("seasons/upcoming", "limit=5");
+  const upComing = await getApiData("seasons/upcoming", "limit=5&sfw=true");
+
+  let rekomendasi = await getNestedApiData("recommendations/anime", "entry");
+  rekomendasi = { data: rekomendasi.slice(0, 5) };
 
   return (
     <div className="bg-blue-100 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">

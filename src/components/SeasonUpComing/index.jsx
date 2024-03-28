@@ -4,7 +4,7 @@ import Link from "next/link";
 import FormatNumber from "@/lib/FormatNumber";
 
 export default function SeasonUpComing({ api }) {
-  const sortedAnimeData = api.data?.slice(0, 25); // Mengambil 25 anime pertama
+  const sortedAnimeData = api.data?.slice(0, 25);
   return (
     <div className="grid md:grid-cols-4 sm:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-4 px-4">
       {sortedAnimeData?.map((anime, index) => {
