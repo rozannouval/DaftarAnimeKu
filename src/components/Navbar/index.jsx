@@ -1,6 +1,8 @@
 import Link from "next/link";
 import InputSearch from "./inputSearch";
 
+import Logo from "@/app/favicon.ico";
+
 import {
   Menubar,
   MenubarContent,
@@ -9,16 +11,16 @@ import {
   MenubarSeparator,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-
+import Image from "next/image";
 
 export default function Navbar() {
   return (
     <header className="">
-      <div className="flex md:flex-row justify-between md:items-center p-4 gap-2 text-slate-600 dark:bg-slate-200 sm:px-0 md:px-8 lg:px-16 xl:px-32 2xl:px-64 px-1 bg-slate-200 font-thin text-3xl">
-        <Link href="/" className="flex dark:text-black">
+      <div className="flex md:flex-row justify-center md:items-center p-4 gap-2 text-slate-600 dark:bg-slate-200 sm:px-0 md:px-8 lg:px-16 xl:px-32 2xl:px-64 px-1 bg-slate-200 font-thin text-3xl">
+        <Link href="/" className="flex items-center gap-2 dark:text-black">
+          <Image src={Logo} width={1000} height={1000} className="w-8 h-8" />
           <h1 className="font-bold">DaftarAnimeKu</h1>
         </Link>
-        <h1 className="font-bold">Anime & Manga</h1>
       </div>
 
       <div className="flex items-center justify-between dark:bg-black bg-teal-600 text-white sm:mx-0 md:mx-8 lg:mx-16 xl:mx-32 2xl:mx-64 mx-0 font-bold tracking-wider">
@@ -112,8 +114,6 @@ export default function Navbar() {
           <InputSearch />
         </div>
       </div>
-
-      
     </header>
   );
 }

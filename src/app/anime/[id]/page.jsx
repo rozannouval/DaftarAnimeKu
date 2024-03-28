@@ -74,7 +74,7 @@ export default async function Page({ params: { id } }) {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href="/topAnime" className="hover:text-blue-600">
+                  <Link href="/anime/topAnime" className="hover:text-blue-600">
                     Top
                   </Link>
                 </BreadcrumbLink>

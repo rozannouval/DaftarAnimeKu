@@ -40,7 +40,7 @@ export default function PaginationPage({ page, setPage, lastPage }) {
         <PaginationContent>
           <PaginationItem>
             {page <= 1 ? (
-              <PaginationPrevious href="#page" />
+              null
             ) : (
               <PaginationPrevious href="#page" onClick={handlePrevPage} />
             )}
@@ -82,7 +82,7 @@ export default function PaginationPage({ page, setPage, lastPage }) {
           )}
           <PaginationItem>
             {page >= lastPage ? (
-              <PaginationNext href="#page" />
+              null
             ) : (
               <PaginationNext href="#page" onClick={handleNextPage} />
             )}

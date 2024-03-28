@@ -42,8 +42,8 @@ export default async function Page() {
   const upComing = await getApiData("seasons/upcoming", "limit=10&sfw=true");
 
   return (
-    <div className="bg-slate-200 dark:bg-slate-800 pt-2 pb-4">
-      <div className="flex items-center mx-0 font-bold tracking-wider">
+    <div className="bg-slate-100 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">
+      <div className="flex items-center mx-0 font-bold tracking-wider px-2">
         <Image
           src={Banner}
           width={1000}
@@ -61,7 +61,7 @@ export default async function Page() {
       </section>
       <section className="py-2">
         <Header
-          title="REKOMENDASI ANIME UNTUK ANDA..."
+          title="DIREKOMENDASIKAN"
         />
         <Rekomendasi api={rekomendasi} />
       </section>
