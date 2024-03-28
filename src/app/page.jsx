@@ -1,8 +1,6 @@
 import Header from "@/components/AnimeList/Header";
 import AnimeList from "@/components/AnimeList";
-import CharList from "@/components/CharList";
 import { getApiData, getNestedApiData } from "@/lib/api-libs";
-import Schedules from "@/components/Schedules";
 import SeasonUpComing from "@/components/SeasonUpComing";
 
 import Banner from "@/assets/img/banner.png";
@@ -32,11 +30,9 @@ export default async function Page() {
   let rekomendasi = await getNestedApiData("recommendations/anime", "entry")
   rekomendasi = {data: rekomendasi.slice(0, 5)}
 
-  // Mendapatkan data anime teratas
   const topAnime = await getApiData("top/anime", "limit=3&sfw=true");
 
-  // Mendapatkan data karakter teratas
-  const upComing = await getApiData("seasons/upcoming", "limit=5&sfw=true");
+  const upComing = await getApiData("seasons/upcoming", "limit=5");
 
   return (
     <div className="bg-slate-100 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">
@@ -63,14 +59,6 @@ export default async function Page() {
         />
         <Rekomendasi api={rekomendasi} />
       </section>
-      {/* <section className="py-2">
-        <Header
-          title="ANIME TERBARU"
-          linkHref="/anime/schedules"
-          linkTitle="Lihat Semua"
-        />
-        <Schedules api={schedules} />
-      </section> */}
       <section className="py-2">
         <Header
           title="PERINGKAT TERATAS"

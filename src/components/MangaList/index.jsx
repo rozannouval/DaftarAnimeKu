@@ -7,7 +7,7 @@ export default function MangaList({ api }) {
   const sortedAnimeData = api.data?.sort((a, b) => a.rank - b.rank);
 
   return (
-    <div className="grid md:grid-cols-4 sm:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-4 px-4">
+    <div className="grid md:grid-cols-4 sm:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-4 px-4 pb-4">
       {sortedAnimeData?.map((anime, index) => {
         return (
           <Link

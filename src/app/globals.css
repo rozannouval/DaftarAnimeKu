@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* PRELOADER ANIMATION */
+.preload {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8rem;
+  height: 8rem;
+  transform: translate(-50%, -50%) rotate(0deg);
+  border-radius: 50%;
+  border: 10px solid;
+  border-color: black black transparent transparent;
+  animation: loader .8s linear infinite;
+}
+
+.c2 {
+  border-color: transparent transparent red red;
+  width: 4rem;
+  height: 4rem;
+}
+
+@keyframes loader {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(calc(360deg * var(--i)));
+  }
+}
+/*PRELOADER ANIMATION*/
