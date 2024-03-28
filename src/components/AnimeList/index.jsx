@@ -48,7 +48,6 @@ export default function AnimeList({ api }) {
                         href={`/anime/${anime.mal_id}`}
                         passHref
                         className="cursor-pointer hover:text-indigo-800 transition-all"
-                        key={index}
                       >
                         <h2 className="font-bold font-sans pb-1 text-md md:text-lg">
                           {anime.title}
