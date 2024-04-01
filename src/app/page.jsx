@@ -1,5 +1,5 @@
 import Header from "@/components/AnimeList/Header";
-import { getApiData, getNestedApiData } from "@/lib/api-libs";
+import { getApiData, getNestedApiData, reproduce } from "@/lib/api-libs";
 import SeasonUpComing from "@/components/SeasonUpComing";
 
 import Banner from "@/assets/img/banner.png";
@@ -11,9 +11,9 @@ export default async function Page() {
   const topAnime = await getApiData("top/anime", "limit=5&sfw=true");
 
   const upComing = await getApiData("seasons/upcoming", "limit=5&sfw=true");
-
+  
   let rekomendasi = await getNestedApiData("recommendations/anime", "entry");
-  rekomendasi = { data: rekomendasi.slice(0, 5) };
+  rekomendasi = reproduce(rekomendasi, 5)
 
   return (
     <div className="bg-blue-100 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">

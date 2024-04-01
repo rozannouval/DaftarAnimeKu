@@ -9,5 +9,15 @@ export const getApiData = async(resource, query) => {
 
 export const getNestedApiData = async(resource, objectProperty) => {
   const response = await getApiData(resource)
-  return response.data.flatMap(item => item.entry)
+  return response.data.flatMap(item => item[objectProperty])
+}
+
+export const reproduce = (data, gap) => {
+  const first = Math.floor(Math.random() * (data.length - gap) + 1)
+  const last = first + gap
+
+  const response = {
+    data: data.slice(first, last)
+  }
+  return response
 }
