@@ -16,7 +16,7 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <header className="">
-      <div className="flex md:flex-row justify-center md:items-center p-4 gap-2 text-blue-800 dark:bg-slate-200 sm:px-0 md:px-8 lg:px-16 xl:px-32 2xl:px-64 px-1 bg-blue-200 font-thin text-3xl">
+      <div className="flex md:flex-row justify-center md:items-center p-4 gap-2 text-blue-800 dark:bg-slate-200 bg-blue-200 font-thin text-3xl">
         <Link href="/" className="flex items-center gap-2 dark:text-black">
           <Image
             src={Logo}
@@ -29,7 +29,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="flex items-center justify-between dark:bg-black bg-blue-700 text-slate-50 sm:mx-0 md:mx-8 lg:mx-16 xl:mx-32 2xl:mx-64 mx-0 font-bold tracking-wider">
+      <div className="flex items-center justify-between dark:bg-black bg-blue-700 text-slate-50 font-bold tracking-wider">
         <div className="flex items-center">
           <Menubar className="bg-transparent border-none gap- p-0">
             <MenubarMenu>

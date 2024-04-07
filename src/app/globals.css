@@ -12,8 +12,9 @@
   transform: translate(-50%, -50%) rotate(0deg);
   border-radius: 50%;
   border: 10px solid;
-  border-color: black black transparent transparent;
+  border-color: rgba(0, 0, 0, 0.5);
   animation: loader .8s linear infinite;
+  -webkit-animation: loader .8s linear infinite;
 }
 
 .c2 {

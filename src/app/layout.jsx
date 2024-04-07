@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning={true}
       >
         <Navbar />
-        <div className="dark:bg-black sm:px-0 md:px-8 lg:px-16 xl:px-32 2xl:px-64 px-0">
+        <div className="dark:bg-black">
           {children}
           <Button />
         </div>
