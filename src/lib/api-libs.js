@@ -7,10 +7,11 @@ export const getApiData = async(resource, query) => {
     return apiData
 }
 
-export const getNestedApiData = async(resource, objectProperty) => {
-  const response = await getApiData(resource)
-  return response.data.flatMap(item => item[objectProperty])
+export const getNestedApiData = async (resource, objectProperty) => {
+  const response = await getApiData(resource);
+  return response.data.map(item => item[objectProperty]).reduce((acc, val) => acc.concat(val), []);
 }
+
 
 export const reproduce = (data, gap) => {
   const first = Math.floor(Math.random() * (data.length - gap) + 1)
