@@ -1,19 +1,16 @@
 import Header from "@/components/AnimeList/Header";
-import { getApiData, getNestedApiData, reproduce } from "@/lib/api-libs";
+import { getApiData } from "@/lib/api-libs";
 import SeasonUpComing from "@/components/SeasonUpComing";
 
 import Banner from "@/assets/img/banner.png";
 import Image from "next/image";
-import Rekomendasi from "@/components/Rekomendasi";
 import MangaList from "@/components/MangaList";
 
 export default async function Page() {
   const topAnime = await getApiData("top/anime", "limit=5&sfw=true");
 
   const upComing = await getApiData("seasons/upcoming", "limit=5&sfw=true");
-  
-  let rekomendasi = await getNestedApiData("recommendations/anime", "entry");
-  rekomendasi = reproduce(rekomendasi, 5)
+
 
   return (
     <div className="bg-blue-100 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">
@@ -47,11 +44,6 @@ export default async function Page() {
           linkTitle="Lihat Semua"
         />
         <SeasonUpComing api={upComing} />
-      </section>
-
-      <section className="py-2">
-        <Header title="DIREKOMENDASIKAN" />
-        <Rekomendasi api={rekomendasi} />
       </section>
     </div>
   );
