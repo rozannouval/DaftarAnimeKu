@@ -21,7 +21,7 @@ export default function Page() {
     [page]);
 
   return (
-    <div className="dark:bg-slate-800 bg-slate-50 min-h-screen border-x-2 border-slate-200">
+    <div className="dark:bg-slate-800 bg-gradient-to-br from-blue-100 to-indigo-100 min-h-screen border-x-2 border-slate-200">
       <HeaderMenu title={`Top Anime Teratas`} count={`halaman ke ${page}`}/>
       <AnimeList api={topAnime} />
       <Pagination page={page} lastPage={topAnime.pagination?.last_visible_page} setPage={setPage} />

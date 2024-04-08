@@ -16,13 +16,18 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <header className="">
-      <div className="flex md:flex-row justify-start md:items-center p-8 gap-2 text-blue-700 dark:bg-slate-200 bg-blue-100 text-5xl">
-        <Link href="/" className="flex items-center gap-2 dark:text-black">
-          <h1 className="font-extrabold font-mono">DaftarAnimeKu</h1>
+      <div className="flex md:flex-row flex-col justify-between items-center p-8 gap-2 dark:bg-slate-200 text-blue-700 bg-gradient-to-bl from-blue-200 via-indigo-200 to-purple-200">
+
+        <Link href="/" className="flex items-center dark:text-black">
+          <h1 className="font-extrabold font-sans text-2xl md:text-5xl">DaftarAnimeKu</h1>
+        </Link>
+
+        <Link href="/" className="flex items-center dark:text-black">
+          <h1 className="font-semibold font-sans bg-gradient-to-br from-cyan-600 via-violet-600 to-purple-600 text-white px-3 py-1 md:px-6 md:py-3 text-lg md:text-2xl rounded-lg">SIGN IN GITHUB</h1>
         </Link>
       </div>
 
-      <div className="px-4 flex items-center justify-between dark:bg-black bg-blue-700 text-slate-50 font-bold tracking-wider">
+      <div className="px-4 flex items-center justify-between flex-col md:flex-row dark:bg-black bg-gradient-to-b from-blue-700 via-indigo-700 to-purple-700 text-slate-50 font-bold tracking-wider">
         <div className="flex items-center">
           <Menubar className="bg-transparent border-none p-0">
             <MenubarMenu>
@@ -87,6 +92,7 @@ export default function Navbar() {
                 <MenubarSeparator />
               </MenubarContent>
             </MenubarMenu>
+
             <MenubarMenu>
               <MenubarTrigger className="py-2.5 px-4 hover:bg-blue-100 hover:text-black rounded-none">
                 <h3 className="text-xl font-bold font-serif">Bantuan</h3>
@@ -110,9 +116,11 @@ export default function Navbar() {
             </MenubarMenu>
           </Menubar>
         </div>
+
         <div className="p-2">
           <InputSearch />
         </div>
+
       </div>
     </header>
   );

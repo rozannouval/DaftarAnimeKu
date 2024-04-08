@@ -14,7 +14,6 @@
   border: 10px solid;
   border-color: rgba(0, 0, 0, 0.5);
   animation: loader .8s linear infinite;
-  -webkit-animation: loader .8s linear infinite;
 }
 
 .c2 {
