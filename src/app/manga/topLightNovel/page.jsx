@@ -1,6 +1,6 @@
 "use client";
 
-import MangaList from "@/components/MangaList";
+import GeneralList from "@/components/GeneralList";
 import HeaderMenu from "@/components/Utilities/HeaderMenu";
 import Pagination from "@/components/Utilities/Pagination";
 import { getApiData } from "@/lib/api-libs";
@@ -11,7 +11,10 @@ export default function Page() {
   const [topManga, setTopManga] = useState([]);
 
   const fetchData = async () => {
-    const data = await getApiData("top/manga", `page=${page}&filter=favorite&type=lightnovel`);
+    const data = await getApiData(
+      "top/manga",
+      `page=${page}&filter=favorite&type=lightnovel`
+    );
     setTopManga(data);
   };
 
@@ -22,7 +25,7 @@ export default function Page() {
   return (
     <div className="dark:bg-slate-800 bg-slate-200 min-h-screen">
       <HeaderMenu title={`LIGHT NOVEL TERATAS`} count={`halaman ke ${page}`} />
-      <MangaList api={topManga} />
+      <GeneralList api={topManga} />
       <Pagination
         page={page}
         lastPage={topManga.pagination?.last_visible_page}

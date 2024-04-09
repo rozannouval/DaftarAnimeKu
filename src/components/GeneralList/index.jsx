@@ -2,7 +2,7 @@ import { Crown, Star } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function MangaList({ api }) {
+export default function GeneralList({ api }) {
   // Sort anime data by rank
   const sortedAnimeData = api.data?.sort((a, b) => a.rank - b.rank);
 
@@ -19,12 +19,12 @@ export default function MangaList({ api }) {
             <div className="relative border-2 border-blue-900 rounded">
 
               <div className="grid md:grid-cols-2 sm:grid-cols-1 font-sans">
-                <h2 className="flex items-center justify-center gap-1 px-2 bg-blue-600 text-white font-bold py-1 text-md md:text-lg border-b-2 border-blue-900">
+                <h2 className="flex items-center justify-center gap-1 px-2 bg-gradient-to-br from-red-600 via-orange-600 to-yellow-600 text-white font-bold py-1 text-md md:text-lg border-b-2 border-r-1 border-blue-900">
                   <Crown className="h-6 w-6" /> {anime.rank}
                 </h2>
 
                 {/* Anime Score */}
-                <h2 className="flex items-center gap-1 text-blue-700 bg-blue-100 font-bold px-4 py-1 text-md md:text-lg border-b-2 border-l-2 border-blue-900">
+                <h2 className="flex items-center justify-center gap-1 bg-gradient-to-bl from-red-200 via-orange-200 to-yellow-200 text-red-700 font-bold pl-4 pr-6 py-1 text-md md:text-lg border-b-2 border-l-1 border-blue-900">
                   <Star className="h-5 w-5"/>
                   {anime.score}
                 </h2>

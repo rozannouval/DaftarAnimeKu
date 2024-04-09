@@ -4,7 +4,7 @@ import SeasonUpComing from "@/components/SeasonUpComing";
 
 import Banner from "@/assets/img/banner.png";
 import Image from "next/image";
-import MangaList from "@/components/MangaList";
+import GeneralList from "@/components/GeneralList";
 
 export default async function Page() {
   const topAnime = await getApiData("top/anime", "limit=5&sfw=true");
@@ -14,13 +14,13 @@ export default async function Page() {
 
   return (
     <div className="bg-blue-100 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">
-      <div className="flex items-center mx-0 font-bold tracking-wider px-2">
+      <div className="flex items-center justify-center mx-0 font-bold tracking-wider px-2">
         <Image
           src={Banner}
           alt={Banner}
           width={1000}
           height={1000}
-          className="w-full h-64 border-8 object-cover border-gray-700"
+          className="border-8 object-cover border-gray-700"
         />
       </div>
 
@@ -34,7 +34,7 @@ export default async function Page() {
           linkHref="/anime/topAnime"
           linkTitle="Lihat Semua"
         />
-        <MangaList api={topAnime} />
+        <GeneralList api={topAnime} />
       </section>
 
       <section className="py-2">

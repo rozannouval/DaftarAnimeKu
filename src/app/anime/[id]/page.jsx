@@ -19,7 +19,6 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Star } from "@phosphor-icons/react/dist/ssr";
 import VideoPlayer from "@/components/Utilities/VideoPlayer";
 
 export default async function Page({ params: { id } }) {
@@ -49,7 +48,7 @@ export default async function Page({ params: { id } }) {
       <div className="py-2 px-4 bg-slate-200 font-bold ">
         <div className="flex justify-between">
           <h1 className="text-2xl">{data.title}</h1>
-          <h1 className="text-xl text-center bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white px-4 py-1 rounded-lg">
+          <h1 className="text-xl text-center bg-gradient-to-br from-red-600 via-orange-600 to-yellow-600 text-white px-4 py-1 rounded-lg">
             Peringkat # {data.rank}
           </h1>
         </div>
@@ -75,42 +74,39 @@ export default async function Page({ params: { id } }) {
           </h2>
 
           <div className="flex items-center gap-2 my-2">
-            <h1 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-2 rounded">Score: </h1>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-red-600 to-orange-600 text-white px-2 rounded">
-              <Star />
-              <h1>{data.score}</h1>
-            </div>
+            <h1>Japanese: </h1>
+            <h1>{data.title_japanese}</h1>
           </div>
-
           <div className="flex items-center gap-2 my-2">
-            <h1 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-2 rounded">Jenis: </h1>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-red-600 to-orange-600 text-white px-2 rounded">
-              <h1>{data.type}</h1>
-            </div>
+            <h1>Tipe: </h1>
+            <h1>{data.type}</h1>
           </div>
-
           <div className="flex items-center gap-2 my-2">
-            <h1 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-2 rounded">
-              Jumlah Episode:{" "}
+            <h1>Durasi: </h1>
+            <h1>{data.duration}</h1>
+          </div>
+          <div className="flex items-center gap-2 my-2">
+            <h1>Total Episode: </h1>
+            <h1>{data.episodes} Episode</h1>
+          </div>
+          <div className="flex items-center gap-2 my-2">
+            <h1>Status: </h1>
+            <h1>{data.status}</h1>
+          </div>
+          <div className="flex items-center gap-2 my-2">
+            <h1>Tanggal: </h1>
+            <h1>
+              {data.aired.prop.from.day}/{data.aired.prop.from.month}
+              /{data.aired.prop.from.year} - {data.aired.prop.to.day}/
+              {data.aired.prop.to.month}/{data.aired.prop.to.year}
             </h1>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-red-600 to-orange-600 text-white px-2 rounded">
-              <h1>{data.episodes} Episode</h1>
-            </div>
           </div>
 
           <div className="flex items-center gap-2 my-2">
-            <h1 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-2 rounded">Durasi: </h1>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-red-600 to-orange-600 text-white px-2 rounded">
-              <h1>{data.duration}</h1>
-            </div>
+            <h1>Sumber : </h1>
+            <h1>{data.source}</h1>
           </div>
 
-          <div className="flex items-center gap-2 my-2">
-            <h1 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-2 rounded">Sumber: </h1>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-red-600 to-orange-600 text-white px-2 rounded">
-              <h1>{data.source}</h1>
-            </div>
-          </div>
         </div>
         <div className="p-2 mx-2 w-full">
           <Breadcrumb className="px-1 pb-2 font-semibold font-sans">
@@ -132,7 +128,9 @@ export default async function Page({ params: { id } }) {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage className="text-blue-600 font-semibold">Anime</BreadcrumbPage>
+                <BreadcrumbPage className="text-blue-600 font-semibold">
+                  Anime
+                </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -156,7 +154,11 @@ export default async function Page({ params: { id } }) {
             </tbody>
           </table>
 
-          <Accordion type="single" collapsible className="w-full bg-gradient-to-r from-blue-100 to-indigo-100">
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full bg-gradient-to-r from-blue-100 to-indigo-100"
+          >
             <AccordionItem value="item-1" className="">
               <AccordionTrigger className="font-bold text-xl px-4">
                 Sinopsis

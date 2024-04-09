@@ -1,6 +1,6 @@
 import Header from "@/components/AnimeList/Header";
 import { getApiData } from "@/lib/api-libs";
-import MangaList from "@/components/MangaList";
+import GeneralList from "@/components/GeneralList";
 
 export default async function Page() {
   const topManga = await getApiData("top/manga", `limit=10&type=lightnovel`);
@@ -13,7 +13,7 @@ export default async function Page() {
           linkHref="/manga/topLightNovel"
           linkTitle="Lihat Semua"
         />
-        <MangaList api={topManga} />
+        <GeneralList api={topManga} />
       </section>
     </div>
   );
