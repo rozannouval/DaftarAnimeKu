@@ -1,5 +1,6 @@
 import Link from "next/link";
 import InputSearch from "./inputSearch";
+import UserAuthButton from "./UserAuthButton";
 
 import Logo from "@/app/favicon.ico";
 
@@ -11,7 +12,6 @@ import {
   MenubarSeparator,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -22,9 +22,7 @@ export default function Navbar() {
           <h1 className="font-extrabold font-sans text-2xl md:text-5xl">DaftarAnimeKu</h1>
         </Link>
 
-        <Link href="/" className="flex items-center dark:text-black">
-          <h1 className="font-semibold font-sans bg-gradient-to-br from-cyan-600 via-violet-600 to-purple-600 text-white px-3 py-1 md:px-6 md:py-3 text-lg md:text-2xl rounded-lg">SIGN IN GITHUB</h1>
-        </Link>
+        <UserAuthButton />
       </div>
 
       <div className="px-4 flex items-center justify-between flex-col md:flex-row dark:bg-black bg-gradient-to-b from-blue-700 via-indigo-700 to-purple-700 text-slate-50 font-bold tracking-wider">
