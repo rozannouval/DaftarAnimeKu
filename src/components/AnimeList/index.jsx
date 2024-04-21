@@ -1,5 +1,6 @@
 import FormatNumber from "@/lib/FormatNumber";
-import { Calendar, Star, Users } from "@phosphor-icons/react/dist/ssr";
+import { Calendar, FilmReel, MonitorPlay, Star, Users } from "@phosphor-icons/react/dist/ssr";
+import { HeartIcon, TimerIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,7 +10,7 @@ export default function AnimeList({ api }) {
 
   return (
     <div className="px-4">
-      <table className="table-fixed bg-blue-50 border-collapse border border-slate-400">
+      <table className="table-fixed bg-slate-200 border-collapse border border-slate-400">
         <thead className="bg-blue-600 text-white">
           <tr>
             <th className="border border-slate-400 px-4">Peringkat</th>
@@ -20,7 +21,7 @@ export default function AnimeList({ api }) {
         </thead>
         {sortedAnimeData?.map((anime, index) => {
           return (
-            <tbody>
+            <tbody className="odd:bg-indigo-50 even:bg-white">
               <tr>
                 <td className="border border-slate-400">
                   <h2 className="flex items-center justify-center px-2 font-bold text-xl md:text-2xl">
@@ -49,27 +50,27 @@ export default function AnimeList({ api }) {
                         passHref
                         className="cursor-pointer hover:text-indigo-800 transition-all"
                       >
-                        <h2 className="font-bold text-indigo-800 font-sans pb-1 text-md md:text-lg">
-                          {anime.title}
+                        <h2 className="font-bold text-indigo-800 font-sans pb-1 text-md md:text-lg flex items-center gap-1">
+                          <FilmReel /> {anime.title}
                         </h2>
                       </Link>
 
                       <div className="pt-2 font-sans text-sm font-normal text-slate-500/90">
-                        <p>
-                          Tanggal ({anime.aired.prop.from.day}/
+                        <p className="flex items-center gap-1">
+                          <Calendar /> Tanggal ({anime.aired.prop.from.day}/
                           {anime.aired.prop.from.month}/
                           {anime.aired.prop.from.year}) - (
                           {anime.aired.prop.to.day}/{anime.aired.prop.to.month}/
                           {anime.aired.prop.to.year})
                         </p>
-                        <p className="my-2">
-                          {anime.type} ({anime.episodes} Episode)
+                        <p className="flex items-center gap-1 my-2">
+                          <MonitorPlay /> {anime.type} ({anime.episodes} Episode)
                         </p>
-                        <p>
-                          Durasi ({anime.duration})
+                        <p className="flex items-center gap-1">
+                        <TimerIcon /> Durasi ({anime.duration})
                         </p>
-                        <p className="my-2">
-                          Jumlah Favorite (
+                        <p className="flex items-center gap-1 my-2">
+                          <HeartIcon /> Jumlah Favorite (
                           <FormatNumber number={anime.favorites} />)
                         </p>
                       </div>

@@ -48,7 +48,10 @@ export default function PaginationPage({ page, setPage, lastPage }) {
           {page > 3 && (
             <>
               <PaginationItem>
-                <PaginationLink href="#page" onClick={() => setPage(1)}>
+                <PaginationLink href="#page" onClick={() => {
+                  scrollTop();
+                  setPage(1);
+                  }}>
                   1
                 </PaginationLink>
               </PaginationItem>
@@ -62,7 +65,10 @@ export default function PaginationPage({ page, setPage, lastPage }) {
               <PaginationLink
                 href="#page"
                 isActive={page === pageNumber}
-                onClick={() => setPage(pageNumber)}
+                onClick={() => {
+                  scrollTop();
+                  setPage(pageNumber);
+                }}
               >
                 {pageNumber}
               </PaginationLink>
@@ -74,7 +80,10 @@ export default function PaginationPage({ page, setPage, lastPage }) {
                 <PaginationEllipsis />
               </PaginationItem>
               <PaginationItem>
-                <PaginationLink href="#page" onClick={() => setPage(lastPage)}>
+                <PaginationLink href="#page" onClick={() => {
+                  scrollTop();
+                  setPage(lastPage);
+                  }}>
                   {lastPage}
                 </PaginationLink>
               </PaginationItem>

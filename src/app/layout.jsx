@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="">
       <body
         className={`${inter.className} text-slate-700 dark:text-slate-100`}
         suppressHydrationWarning={true}

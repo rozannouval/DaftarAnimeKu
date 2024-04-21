@@ -1,6 +1,9 @@
 import Header from "@/components/AnimeList/Header";
 import { getApiData } from "@/lib/api-libs";
-import MangaList from "@/components/GeneralList";
+import { Crown, Star } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
+// import GeneralList from "@/components/GeneralList";
+import Link from "next/link"
 
 export default async function Page({ params }) {
   const { keyword } = params;
@@ -8,12 +11,53 @@ export default async function Page({ params }) {
   const decodeKeyword = decodeURI(keyword); //agar keyword Enter tidak %20
 
   const searchAnime = await getApiData("anime", `q=${decodeKeyword}&sfw=true`);
+  const sortedAnimeData = searchAnime.data?.sort((a, b) => b.score - a.score);
 
   return (
     <div className="bg-slate-200 dark:bg-slate-800 min-h-screen">
       <section>
         <Header title={`Hasil dari pencarian ${decodeKeyword}...`} />
-        <MangaList api={searchAnime} />
+        <div className="grid md:grid-cols-4 sm:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-4 px-4 pb-4">
+      {sortedAnimeData?.map((anime, index) => {
+        return (
+          <Link
+            href={`/anime/${anime.mal_id}`}
+            passHref
+            className="cursor-pointer hover:text-indigo-800 transition-all"
+            key={index}
+          >
+            <div className="relative border-2 border-blue-900 rounded">
+
+              <div className="grid md:grid-cols-2 sm:grid-cols-1 font-sans">
+                <h2 className="flex items-center justify-center gap-1 px-2 bg-gradient-to-br from-red-600 via-orange-600 to-yellow-600 text-white font-bold py-1 text-md md:text-lg border-b-2 border-r-1 border-blue-900">
+                  <Crown className="h-6 w-6" /> {anime.rank}
+                </h2>
+
+                {/* Anime Score */}
+                <h2 className="flex items-center justify-center gap-1 bg-gradient-to-bl from-red-200 via-orange-200 to-yellow-200 text-red-700 font-bold pl-4 pr-6 py-1 text-md md:text-lg border-b-2 border-l-1 border-blue-900">
+                  <Star className="h-5 w-5"/>
+                  {anime.score}
+                </h2>
+              </div>
+
+              <Image
+                src={anime.images.webp.image_url}
+                alt={anime.title}
+                width={1000}
+                height={1000}
+                className="w-full h-64 sm:h-64 md:h-72 xl:h-80 object-cover"
+              />
+
+              <h2 className="absolute z-10 bottom-0 left-0 bg-gradient-to-t from-black text-white font-bold pb-1 pt-6 px-2 text-md md:text-lg">
+                {anime.title}
+              </h2>
+
+              <div className="absolute z-40 inset-0 bg-white opacity-0 hover:opacity-20 transition-opacity"></div>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
       </section>
     </div>
   );

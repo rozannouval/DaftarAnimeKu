@@ -13,7 +13,7 @@ export default async function Page() {
 
 
   return (
-    <div className="bg-blue-100 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">
+    <div className="bg-slate-200 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">
       <div className="flex items-center justify-center mx-0 font-bold tracking-wider px-2">
         <Image
           src={Banner}

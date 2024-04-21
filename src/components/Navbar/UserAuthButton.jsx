@@ -3,7 +3,7 @@ import { AuthUserSession } from "@/lib/auth-libs";
 
 const UserAuthButton = async () => {
   const user = await AuthUserSession();
-  const actionLabel = user ? "SIGN OUT" : "SIGN IN GITHUB";
+  const actionLabel = user ? "SIGNOUT" : "SIGN IN GITHUB";
   const actionURL = user ? "/api/auth/signout" : "/api/auth/signin";
 
   return (

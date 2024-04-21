@@ -19,13 +19,13 @@ export default function Navbar() {
       <div className="flex md:flex-row flex-col justify-between items-center p-8 gap-2 dark:bg-slate-200 text-blue-700 bg-gradient-to-bl from-blue-200 via-indigo-200 to-purple-200">
 
         <Link href="/" className="flex items-center dark:text-black">
-          <h1 className="font-extrabold font-sans text-2xl md:text-5xl">DaftarAnimeKu</h1>
+          <h1 className="font-extrabold font-sans text-3xl md:text-5xl">DaftarAnimeKu</h1>
         </Link>
 
         <UserAuthButton />
       </div>
 
-      <div className="px-4 flex items-center justify-between flex-col md:flex-row dark:bg-black bg-gradient-to-b from-blue-700 via-indigo-700 to-purple-700 text-slate-50 font-bold tracking-wider">
+      <div className="px-4 flex items-center justify-between flex-col sm:flex-row dark:bg-black bg-gradient-to-b from-blue-700 via-indigo-700 to-purple-700 text-slate-50 font-bold tracking-wider">
         <div className="flex items-center">
           <Menubar className="bg-transparent border-none p-0">
             <MenubarMenu>
@@ -46,50 +46,17 @@ export default function Navbar() {
                     <h3>Peringkat Anime</h3>
                   </MenubarItem>
                 </Link>
-                <Link
-                  href="/characters/topCharacters"
-                  className="hover:bg-blue-100 hover:text-black "
-                >
-                  <MenubarItem className="cursor-pointer">
-                    <h3>Karakter Terpopuler</h3>
-                  </MenubarItem>
-                </Link>
                 <MenubarSeparator />
               </MenubarContent>
             </MenubarMenu>
 
-            <MenubarMenu>
-              <MenubarTrigger className="py-2.5 px-4 hover:bg-blue-100 hover:text-black rounded-none">
-                <h3 className="text-xl font-bold font-serif">Manga</h3>
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link
-                  href="/manga"
-                  className="hover:bg-blue-100 hover:text-black "
+              <Link
+                  href="/characters"
+                  className="py-2.5 px-4 hover:bg-blue-100 hover:text-black rounded-none"
                 >
-                  <MenubarItem className="cursor-pointer">
-                    <h3>Beranda - Manga</h3>
-                  </MenubarItem>
+                <h3 className="text-xl font-bold font-serif">Karakter</h3>
                 </Link>
-                <Link
-                  href="/manga/topManga"
-                  className="hover:bg-blue-100 hover:text-black "
-                >
-                  <MenubarItem className="cursor-pointer">
-                    <h3>Peringkat Manga</h3>
-                  </MenubarItem>
-                </Link>
-                <Link
-                  href="/manga/MangaPopuler"
-                  className="hover:bg-blue-100 hover:text-black "
-                >
-                  <MenubarItem className="cursor-pointer">
-                    <h3>Manga Terpopuler</h3>
-                  </MenubarItem>
-                </Link>
-                <MenubarSeparator />
-              </MenubarContent>
-            </MenubarMenu>
+
 
             <MenubarMenu>
               <MenubarTrigger className="py-2.5 px-4 hover:bg-blue-100 hover:text-black rounded-none">

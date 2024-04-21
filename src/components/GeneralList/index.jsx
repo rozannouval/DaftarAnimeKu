@@ -38,7 +38,7 @@ export default function GeneralList({ api }) {
                 className="w-full h-64 sm:h-64 md:h-72 xl:h-80 object-cover"
               />
 
-              <h2 className="absolute z-10 bottom-0 left-0 right-0 bg-gradient-to-t from-black text-white font-bold pb-1 pt-6 px-2 text-md md:text-lg">
+              <h2 className="absolute z-10 bottom-0 left-0 bg-gradient-to-t from-black text-white font-bold pb-1 pt-6 px-2 text-md md:text-lg">
                 {anime.title}
               </h2>
 
