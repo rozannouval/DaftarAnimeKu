@@ -11,20 +11,28 @@ export default function Page() {
   const [upComing, setUpComing] = useState([]);
 
   const fetchData = async () => {
-    const data = await getApiData("seasons/upcoming", `page=${page}&sfw=true`)
+    const data = await getApiData("seasons/upcoming", `page=${page}&sfw=true`);
     setUpComing(data);
   };
 
-  useEffect (() => {
-      fetchData();
-    },
-    [page]);
+  useEffect(() => {
+    fetchData();
+  }, [page]);
 
   return (
-    <div className="bg-slate-200 min-h-screen md:container mx-0 md:mx-auto">
-      <HeaderMenu title={`MUSIM YANG AKAN DATANG`} count={`halaman ke ${page}`}/>
-      <SeasonUpComing api={upComing} />
-      <Pagination page={page} lastPage={upComing.pagination?.last_visible_page} setPage={setPage} />
+    <div className="bg-slate-200 min-h-screen">
+      <div className="md:container mx-0 md:mx-auto">
+        <HeaderMenu
+          title={`MUSIM YANG AKAN DATANG`}
+          count={`halaman ke ${page}`}
+        />
+        <SeasonUpComing api={upComing} />
+        <Pagination
+          page={page}
+          lastPage={upComing.pagination?.last_visible_page}
+          setPage={setPage}
+        />
+      </div>
     </div>
   );
 }
