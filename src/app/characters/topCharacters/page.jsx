@@ -22,10 +22,12 @@ export default function Page() {
   }, [page]);
 
   return (
-    <div className="dark:bg-slate-800 bg-slate-200 min-h-screen">
+    <div className="bg-slate-200 min-h-screen">
+      <div className="md:container mx-0 md:mx-auto">
       <HeaderMenu title={`KARAKTER POPULER`} count={`halaman ke ${page}`} />
       <CharList api={topChar} />
       <Pagination page={page} lastPage={topChar.pagination?.last_visible_page} setPage={setPage} />
+      </div>
     </div>
   );
 }

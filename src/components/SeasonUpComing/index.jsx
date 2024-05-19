@@ -15,7 +15,7 @@ export default function SeasonUpComing({ api }) {
             className="cursor-pointer hover:text-indigo-800 transition-all border-2 border-slate-800"
             key={index}
           >
-            <div className="relative z-40">
+            <div className="relative z-40 rounded-lg">
               <Image
                 src={anime.images.webp.image_url}
                 alt={anime.title}

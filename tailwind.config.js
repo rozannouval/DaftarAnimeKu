@@ -17,6 +17,12 @@ module.exports = {
       },
     },
     extend: {
+      colors: {
+        "primary-blue": "#10439F",
+        "primary-purple": "#874CCC",
+        "secondary-purple": "#C65BCF",
+        "primary-pink": "#F27BBD",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

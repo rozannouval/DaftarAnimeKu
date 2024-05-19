@@ -13,7 +13,7 @@ export default async function Page() {
 
 
   return (
-    <div className="bg-slate-200 border-x border-slate-500 dark:bg-slate-800 pt-2 pb-4">
+    <div className="bg-slate-200 dark:bg-slate-800 pt-2 pb-4">
       <div className="flex items-center justify-center mx-0 font-bold tracking-wider px-2">
         <Image
           src={Banner}
@@ -24,11 +24,11 @@ export default async function Page() {
         />
       </div>
 
-      <section className="py-2 px-4 m-2 font-bold text-xl font-serif text-blue-800 bg-blue-300">
-        <h1>Selamat Datang di DaftarAnimeKu!</h1>
+      <section className="py-2 m-2 font-bold text-xl font-serif text-blue-800 bg-blue-300 text-center">
+        <h1 className="container xl:mx-auto">Selamat Datang di DaftarAnimeKu!</h1>
       </section>
 
-      <section className="py-2">
+      <section className="py-2 md:container mx-0 md:mx-auto">
         <Header
           title="PERINGKAT TERATAS"
           linkHref="/anime/topAnime"
@@ -37,7 +37,7 @@ export default async function Page() {
         <GeneralList api={topAnime} />
       </section>
 
-      <section className="py-2">
+      <section className="py-2 md:container mx-0 md:mx-auto">
         <Header
           title="MUSIM YANG AKAN DATANG..."
           linkHref="/anime/upComing"

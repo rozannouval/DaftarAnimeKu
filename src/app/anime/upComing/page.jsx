@@ -21,7 +21,7 @@ export default function Page() {
     [page]);
 
   return (
-    <div className="dark:bg-slate-800 bg-gradient-to-br from-blue-100 to-indigo-100 min-h-screen">
+    <div className="bg-slate-200 min-h-screen md:container mx-0 md:mx-auto">
       <HeaderMenu title={`MUSIM YANG AKAN DATANG`} count={`halaman ke ${page}`}/>
       <SeasonUpComing api={upComing} />
       <Pagination page={page} lastPage={upComing.pagination?.last_visible_page} setPage={setPage} />

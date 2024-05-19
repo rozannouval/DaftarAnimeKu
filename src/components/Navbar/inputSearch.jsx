@@ -25,7 +25,7 @@ export default function InputSearch() {
       <input
         placeholder="Cari..."
         ref={searchRef}
-        className="dark:bg-slate-800 p-1 rounded w-full"
+        className="bg-gray-200 p-1 rounded w-full"
         onKeyDown={HandleSearch}
       />
       <button onClick={HandleSearch} className="absolute top-1 end-1">

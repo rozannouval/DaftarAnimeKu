@@ -15,77 +15,84 @@ import {
 
 export default function Navbar() {
   return (
-    <header className="">
-      <div className="flex md:flex-row flex-col justify-between items-center p-8 gap-2 dark:bg-slate-200 text-blue-700 bg-gradient-to-bl from-blue-200 via-indigo-200 to-purple-200">
-
-        <Link href="/" className="flex items-center dark:text-black">
-          <h1 className="font-extrabold font-sans text-3xl md:text-5xl">DaftarAnimeKu</h1>
+    <header className="bg-primary-blue text-gray-200">
+      <div className="flex md:flex-row flex-col justify-between items-center p-8 gap-2 container max-auto">
+        <Link href="/" className="flex items-center">
+          <h1 className="font-extrabold font-sans text-3xl md:text-5xl">
+            DaftarAnimeKu
+          </h1>
         </Link>
 
-        <UserAuthButton />
+        <UserAuthButton/>
       </div>
 
-      <div className="px-4 flex items-center justify-between flex-col sm:flex-row dark:bg-black bg-gradient-to-b from-blue-700 via-indigo-700 to-purple-700 text-slate-50 font-bold tracking-wider">
-        <div className="flex items-center">
-          <Menubar className="bg-transparent border-none p-0">
-            <MenubarMenu>
-              <MenubarTrigger className="py-2.5 px-4 hover:bg-blue-100 hover:text-black rounded-none">
-                <h3 className="text-xl font-bold font-serif">Anime</h3>
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link href="/" className="hover:bg-blue-100 hover:text-black ">
-                  <MenubarItem className="cursor-pointer">
-                    <h3>Beranda - Anime</h3>
-                  </MenubarItem>
-                </Link>
-                <Link
-                  href="/anime/topAnime"
-                  className="hover:bg-blue-100 hover:text-black "
-                >
-                  <MenubarItem className="cursor-pointer">
-                    <h3>Peringkat Anime</h3>
-                  </MenubarItem>
-                </Link>
-                <MenubarSeparator />
-              </MenubarContent>
-            </MenubarMenu>
+      <div className="bg-primary-purple text-white">
+        <div className="px-4 flex items-center justify-between flex-col-reverse sm:flex-row dark:bg-black font-bold tracking-wider container mx-auto">
+          <div className="flex items-center">
+            <Menubar className="bg-transparent border-none p-0">
+              <MenubarMenu>
+                <MenubarTrigger className="py-2.5 px-4 hover:bg-blue-100 hover:text-black rounded-none">
+                  <h3 className="text-xl font-bold font-serif">Anime</h3>
+                </MenubarTrigger>
+                <MenubarContent>
+                  <Link
+                    href="/"
+                    className="hover:bg-blue-100 hover:text-black "
+                  >
+                    <MenubarItem className="cursor-pointer">
+                      <h3>Beranda - Anime</h3>
+                    </MenubarItem>
+                  </Link>
+                  <Link
+                    href="/anime/topAnime"
+                    className="hover:bg-blue-100 hover:text-black "
+                  >
+                    <MenubarItem className="cursor-pointer">
+                      <h3>Peringkat Anime</h3>
+                    </MenubarItem>
+                  </Link>
+                  <MenubarSeparator />
+                </MenubarContent>
+              </MenubarMenu>
 
               <Link
-                  href="/characters"
-                  className="py-2.5 px-4 hover:bg-blue-100 hover:text-black rounded-none"
-                >
+                href="/characters"
+                className="py-2.5 px-4 hover:bg-blue-100 hover:text-black rounded-none"
+              >
                 <h3 className="text-xl font-bold font-serif">Karakter</h3>
-                </Link>
+              </Link>
 
+              <MenubarMenu>
+                <MenubarTrigger className="py-2.5 px-4 hover:bg-blue-100 hover:text-black rounded-none">
+                  <h3 className="text-xl font-bold font-serif">Bantuan</h3>
+                </MenubarTrigger>
+                <MenubarContent>
+                  <Link
+                    href="/"
+                    className="hover:bg-blue-100 hover:text-black "
+                  >
+                    <MenubarItem className="cursor-pointer">
+                      <h3>Tentang</h3>
+                    </MenubarItem>
+                  </Link>
+                  <Link
+                    href="/topAnime"
+                    className="hover:bg-blue-100 hover:text-black "
+                  >
+                    <MenubarItem className="cursor-pointer">
+                      <h3>Hubungi Kami</h3>
+                    </MenubarItem>
+                  </Link>
+                  <MenubarSeparator />
+                </MenubarContent>
+              </MenubarMenu>
+            </Menubar>
+          </div>
 
-            <MenubarMenu>
-              <MenubarTrigger className="py-2.5 px-4 hover:bg-blue-100 hover:text-black rounded-none">
-                <h3 className="text-xl font-bold font-serif">Bantuan</h3>
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link href="/" className="hover:bg-blue-100 hover:text-black ">
-                  <MenubarItem className="cursor-pointer">
-                    <h3>Tentang</h3>
-                  </MenubarItem>
-                </Link>
-                <Link
-                  href="/topAnime"
-                  className="hover:bg-blue-100 hover:text-black "
-                >
-                  <MenubarItem className="cursor-pointer">
-                    <h3>Hubungi Kami</h3>
-                  </MenubarItem>
-                </Link>
-                <MenubarSeparator />
-              </MenubarContent>
-            </MenubarMenu>
-          </Menubar>
+          <div className="p-2">
+            <InputSearch />
+          </div>
         </div>
-
-        <div className="p-2">
-          <InputSearch />
-        </div>
-
       </div>
     </header>
   );
