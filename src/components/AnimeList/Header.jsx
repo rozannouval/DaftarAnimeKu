@@ -7,7 +7,7 @@ export default function Header({ title, linkHref, linkTitle }) {
       {linkHref && linkTitle ? (
         <Link
           href={linkHref}
-          className="sm:text-xl text-sm text-blue-800 hover:text-indigo-500 transition all"
+          className="sm:text-xl text-sm text-white hover:text-slate-300 transition all"
         >
           {linkTitle}
         </Link>
