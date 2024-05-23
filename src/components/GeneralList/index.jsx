@@ -13,23 +13,23 @@ export default function GeneralList({ api }) {
           <Link
             href={`/anime/${anime.mal_id}`}
             passHref
-            className="cursor-pointer hover:text-indigo-800 transition-all"
+            className="cursor-pointer hover:text-indigo-800 transition-all border-2 border-blue-900 rounded-lg text-center"
             key={index}
           >
-            <div className="relative border-2 border-blue-900 rounded-lg">
+            <div className="relative">
               <Image
                 src={anime.images.webp.image_url}
                 alt={anime.title}
                 width={1000}
                 height={1000}
-                className="w-full h-64 sm:h-64 md:h-72 xl:h-80 object-cover rounded-lg"
+                className="w-full h-64 sm:h-64 md:h-72 xl:h-80 object-cover rounded-md"
               />
 
-              <h2 className="absolute z-10 w-full bottom-0 left-0 bg-gradient-to-t from-black text-white font-bold pb-1 pt-6 px-2 text-md md:text-lg">
+              <h2 className="absolute z-10 w-full bottom-0 left-0 bg-gradient-to-t from-black text-white font-bold pb-1 pt-6 px-2 text-md md:text-lg rounded-b-md">
                 {anime.title}
               </h2>
 
-              <div className="absolute z-40 inset-0 bg-white opacity-0 hover:opacity-20 transition-opacity"></div>
+              <div className="absolute z-40 inset-0 bg-white opacity-0 hover:opacity-20 transition-opacity rounded-md"></div>
             </div>
           </Link>
         );

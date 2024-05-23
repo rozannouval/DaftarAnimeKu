@@ -39,19 +39,20 @@ export default function PaginationPage({ page, setPage, lastPage }) {
       <Pagination>
         <PaginationContent>
           <PaginationItem>
-            {page <= 1 ? (
-              null
-            ) : (
+            {page <= 1 ? null : (
               <PaginationPrevious href="#page" onClick={handlePrevPage} />
             )}
           </PaginationItem>
           {page > 3 && (
             <>
               <PaginationItem>
-                <PaginationLink href="#page" onClick={() => {
-                  scrollTop();
-                  setPage(1);
-                  }}>
+                <PaginationLink
+                  href="#page"
+                  onClick={() => {
+                    scrollTop();
+                    setPage(1);
+                  }}
+                >
                   1
                 </PaginationLink>
               </PaginationItem>
@@ -80,19 +81,20 @@ export default function PaginationPage({ page, setPage, lastPage }) {
                 <PaginationEllipsis />
               </PaginationItem>
               <PaginationItem>
-                <PaginationLink href="#page" onClick={() => {
-                  scrollTop();
-                  setPage(lastPage);
-                  }}>
+                <PaginationLink
+                  href="#page"
+                  onClick={() => {
+                    scrollTop();
+                    setPage(lastPage);
+                  }}
+                >
                   {lastPage}
                 </PaginationLink>
               </PaginationItem>
             </>
           )}
           <PaginationItem>
-            {page >= lastPage ? (
-              null
-            ) : (
+            {page >= lastPage ? null : (
               <PaginationNext href="#page" onClick={handleNextPage} />
             )}
           </PaginationItem>

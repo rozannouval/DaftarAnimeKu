@@ -13,13 +13,13 @@ export default async function Page() {
 
   return (
     <div className="bg-slate-200 dark:bg-slate-800 pt-2 pb-4">
-      <div className="flex items-center justify-center mx-0 font-bold tracking-wider px-2">
+      <div className="flex items-center justify-center mx-0 font-bold tracking-wider px-2 rounded-lg">
         <Image
           src={Banner}
           alt={Banner}
           width={1000}
           height={1000}
-          className="border-8 object-cover border-gray-700"
+          className="border-8 object-cover border-gray-700 rounded-lg"
         />
       </div>
 
@@ -30,24 +30,26 @@ export default async function Page() {
       </section>
 
       <section className="py-2 md:container mx-0 md:mx-auto">
-        <div className="bg-primary-purple text-white p-4 rounded-lg">
+        <div className="bg-purple-600 text-white p-4 rounded-lg">
           <Header
             title="PERINGKAT TERATAS"
             linkHref="/anime/topAnime"
             linkTitle="Lihat Semua"
           />
+          <hr className="border-2 rounded-full mb-6 mx-3" />
           <GeneralList api={topAnime} />
         </div>
       </section>
 
       <section className="py-2 md:container mx-0 md:mx-auto">
-        <div className="p-4 bg-primary-purple text-white rounded-lg">
-        <Header
-          title="MUSIM YANG AKAN DATANG..."
-          linkHref="/anime/upComing"
-          linkTitle="Lihat Semua"
-        />
-        <SeasonUpComing api={upComing} />
+        <div className="p-4 bg-blue-700 text-white rounded-lg">
+          <Header
+            title="MUSIM YANG AKAN DATANG..."
+            linkHref="/anime/upComing"
+            linkTitle="Lihat Semua"
+          />
+          <hr className="border-2 rounded-full mb-6 mx-3" />
+          <SeasonUpComing api={upComing} />
         </div>
       </section>
     </div>

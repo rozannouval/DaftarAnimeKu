@@ -12,7 +12,7 @@ export default function SeasonUpComing({ api }) {
           <Link
             href={`/anime/${anime.mal_id}`}
             passHref
-            className="cursor-pointer hover:text-indigo-800 transition-all border-2 border-primary-blue rounded-lg"
+            className="cursor-pointer hover:text-indigo-800 transition-all border-2 border-primary-blue rounded-lg text-center"
             key={index}
           >
             <div className="relative z-40 rounded-lg">
@@ -21,24 +21,22 @@ export default function SeasonUpComing({ api }) {
                 alt={anime.title}
                 width={1000}
                 height={1000}
-                className="w-full h-64 sm:h-64 md:h-72 xl:h-80 object-cover rounded-lg"
+                className="w-full h-64 sm:h-64 md:h-72 xl:h-80 object-cover rounded-md"
               />
-              <div className="absolute z-30 top-0 left-0 w-full bg-gradient-to-b from-black text-white">
-                <h2
-                  className="flex items-center justify-center text-center gap-2 font-bold pb-10 px-2 text-md md:text-lg font-sans "
-                >
-                  <Calendar /> {anime.aired.prop.from.day} -
-                  {anime.aired.prop.from.month} -{anime.aired.prop.from.year}
+              <div className="absolute z-30 top-0 left-0 w-full text-white flex justify-center">
+                <h2 className="flex items-center justify-center gap-2 font-bold px-2 my-1 text-md md:text-lg font-sans border rounded-xl bg-black/60">
+                  <Calendar /> {anime.aired.prop.from.day} -{" "}
+                  {anime.aired.prop.from.month} - {anime.aired.prop.from.year}
                 </h2>
               </div>
 
-              <div className="absolute z-20 bottom-0 left-0 w-full bg-gradient-to-t from-black">
+              <div className="absolute z-20 bottom-0 left-0 w-full bg-gradient-to-t from-black rounded-b-md">
                 <h2 className="text-white font-bold pt-8 mt-10 pb-1 px-2 text-md md:text-lg font-sans">
                   {anime.title}
                 </h2>
               </div>
 
-              <div className="absolute z-30 inset-0 bg-white opacity-0 hover:opacity-20 transition-opacity"></div>
+              <div className="absolute z-30 inset-0 bg-white opacity-0 hover:opacity-20 transition-opacity rounded-md"></div>
             </div>
           </Link>
         );
