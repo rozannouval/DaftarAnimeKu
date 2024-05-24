@@ -10,7 +10,7 @@ export default function AnimeList({ api }) {
 
   return (
     <div className="px-4">
-      <table className="table-fixed bg-slate-200 border-collapse border border-slate-400">
+      <table className="table-auto text-sm md:text-base lg:text-lg bg-slate-200 border-collapse border border-slate-400">
         <thead className="bg-blue-600 text-white">
           <tr>
             <th className="border border-slate-400 px-4">Peringkat</th>
@@ -29,7 +29,7 @@ export default function AnimeList({ api }) {
                   </h2>
                 </td>
                 <td className="border border-slate-400">
-                  <div className="flex items-start p-4">
+                  <div className="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left justify-center lg:justify-start p-4">
                     <Link
                       href={`/anime/${anime.mal_id}`}
                       passHref
@@ -50,7 +50,7 @@ export default function AnimeList({ api }) {
                         passHref
                         className="cursor-pointer hover:text-indigo-800 transition-all"
                       >
-                        <h2 className="font-bold text-indigo-800 font-sans pb-1 text-md md:text-lg flex items-center gap-1">
+                        <h2 className="font-bold text-indigo-800 font-sans pb-1 text-sm sm:text-base md:text-lg lg:text-xl flex items-center gap-1">
                           <FilmReel /> {anime.title}
                         </h2>
                       </Link>

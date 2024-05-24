@@ -30,7 +30,7 @@ export default async function Page() {
       </section>
 
       <section className="py-2 md:container mx-0 md:mx-auto">
-        <div className="bg-purple-600 text-white p-4 rounded-lg">
+        <div className="bg-gradient-to-b from-purple-600 to-purple-500 text-white p-4 rounded-lg">
           <Header
             title="PERINGKAT TERATAS"
             linkHref="/anime/topAnime"
@@ -42,7 +42,7 @@ export default async function Page() {
       </section>
 
       <section className="py-2 md:container mx-0 md:mx-auto">
-        <div className="p-4 bg-blue-700 text-white rounded-lg">
+        <div className="p-4 bg-gradient-to-b from-blue-700 to-blue-600 text-white rounded-lg">
           <Header
             title="MUSIM YANG AKAN DATANG..."
             linkHref="/anime/upComing"

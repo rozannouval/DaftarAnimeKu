@@ -30,16 +30,16 @@ export default function Navbar() {
         <div className="px-4 flex items-center justify-between flex-col md:flex-row dark:bg-black font-bold tracking-wider container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 items-center text-center w-full md:w-auto">
             <Link href="/" className="py-4 px-8 transition-all duration-500 hover:bg-primary-blue w-full md:w-auto">
-              Beranda
+              BERANDA
             </Link>
             <Link href="/anime/topAnime" className="py-4 px-8 transition-all duration-500 hover:bg-primary-blue w-full md:w-auto">
-              Peringkat
+              PERINGKAT
             </Link>
             <Link href="/characters" className="py-4 px-8 transition-all duration-500 hover:bg-primary-blue w-full md:w-auto">
-              Karakter
+              KARAKTER
             </Link>
             <Link href="/Tentang" className="py-4 px-8 transition-all duration-500 hover:bg-primary-blue w-full md:w-auto">
-              Tentang
+              TENTANG
             </Link>
           </div>
 
